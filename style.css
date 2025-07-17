@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --primary: #ff5959;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.inter{
+    font-family: "Inter", sans-serif;
+}
+.roboto{
+    font-family: "Roboto", sans-serif;
+}
+.lobster{
+    font-family: "Lobster", sans-serif;
+}
+.text-center{
+    text-align: center;
+}
+.flex{
+    display: flex;
+}
+.btn{
+    display: inline-block;
+    background-color: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    padding: 12px 16px;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+body{
+    color: #121212;
+}
+p{
+    color: #707070;
+    font-size: 1em;
+}
+.banner{
+    background: linear-gradient(transparent, #121212), url(images/donation5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 30px;
+    color: #fff;
+    & .banner-content{
+        max-width: 830px;
+        margin: 0 auto;
+        & h1, p{
+            margin-bottom: 10px;
+        }
+        & h1{
+            font-size: 4em;
+            font-weight: 700;
+        }
+        p{
+            color: #fff;
+        }
+    }
+}
+section{
+    width: min(1280px, calc(100% - 30px));
+    margin: 0 auto;
+    padding: 50px 0;
+    & .section-head{
+        max-width: 700px;
+        margin: 0 auto;
+        & > *{
+            margin-bottom: 20px;
+        }
+        & h3{
+            font-size: 2.75em;
+        }
+    }
+    &.donation-section{
+        & .cards{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            grid-template-columns: repeat(5, 1fr);
+            & .card{
+                background-color: #fafafa;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 32px 15px;
+                &:nth-of-type(2){
+                    border: 2px solid var(--primary);
+                    background-color: #ffeeee;
+                    color: var(--primary);
+                }
+                & h5{
+                    font-size: 30px;
+                }
+            }
+        }
+        & form{
+            max-width: 500px;
+            margin: 0 auto;
+            & input{
+                width: 100%;
+                border: 0;
+                padding: 10px;
+                outline: none;
+                margin: 20px 0;
+                border-bottom: 1px solid #dadada;
+            }
+        }
+    }
+    &.donate-plan .cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        & .card{
+            background-color: #edf5f6;
+            padding: 50px 20px;
+            border-radius: 10px;
+            &:nth-of-type(2){
+                background-color: #ffeeee;
+            }
+            &:nth-of-type(3){
+                background-color: #fff4d6;
+            }
+            & img{
+                width: 50px;
+            }
+            & h6{
+                font-size: 24px;
+                margin: 15px 0;
+            }
+        }
+    }
+    &.lives, &.need-survive{
+        align-items: center;
+        gap: 30px;
+        & img{
+            width: 50%;
+        }
+    }
+    &.need-survive{
+        flex-direction: row-reverse;
+    }
+    &.newsletter form{
+        background-color: #fff4d6;
+        max-width: 800px;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 50px 20px;
+        & input{
+            width: 100%;
+            max-width: 400px;
+            border: 0;
+            outline: 0;
+            padding: 20px;
+            background-color: #d9d9d9;
+            border-radius: 5px 0 0 5px;
+        }
+        & button{
+            border-radius: 0 5px 5px 0;
+        }
+    }
+}
+footer{
+    background-color: #0b0d17;
+    padding: 50px 20px;
+    & h4{
+        font-size: 2.25em;
+        font-weight: 400;
+        margin-bottom: 30px;
+        color: #ff5959;
+    }
+    & p{
+        color: #d9dbe1;
+    }
+}
+@media screen and (min-width: 576px) and (max-width: 992px){
+    section.donate-plan .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    section{
+        &.lives, &.need-survive{
+            flex-direction: column-reverse;
+            & img{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 575px){
+    section.donate-plan .cards{
+        grid-template-columns: 1fr;
+    }
+}
